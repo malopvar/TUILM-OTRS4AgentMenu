@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Application">
+	
+    <ConfigItem Name="Frontend::Module###AgentTicketNew" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the agent interface.</Description>
+        <Group>UniRZFramework</Group>
+        <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
+        <Setting>
+            <FrontendModuleReg>
+                <Description>Create new ticket</Description>
+                <Title>NewTicket</Title>
+                <NavBarName>New Ticket</NavBarName>
+                <NavBar>
+                    <Description Translatable="1">Create new ticket</Description>
+                    <Name Translatable="1">New Ticket</Name>
+                    <Link>Action=AgentTicketPhone</Link>
+                    <LinkOption></LinkOption>
+                    <NavBar>New Ticket</NavBar>
+                    <Type>Menu</Type>
+                    <Block></Block>
+                    <AccessKey>N</AccessKey>
+                    <Prio>105</Prio>
+                </NavBar>
+                <Loader>
+                    <CSS>Core.AllocationList.css</CSS>
+                    <JavaScript>Core.UI.AllocationList.js</JavaScript>
+                    <JavaScript>Core.Agent.CustomerSearch.js</JavaScript>
+                    <JavaScript>Core.Agent.TicketAction.js</JavaScript>
+                </Loader>
+            </FrontendModuleReg>
+        </Setting>
+    </ConfigItem>
+	
+    <ConfigItem Name="Frontend::Module###AgentTicketPhone" Required="0" Valid="1">
+        <Description Translatable="1">Frontend module registration for the agent interface.</Description>
+        <Group>Ticket</Group>
+        <SubGroup>Frontend::Agent::ModuleRegistration</SubGroup>
+        <Setting>
+            <FrontendModuleReg>
+                <Description>Create new phone ticket</Description>
+                <Title>New phone ticket</Title>
+                <NavBarName>New Ticket</NavBarName>
+                <NavBar>
+                    <Description Translatable="1">Create new phone ticket (inbound)</Description>
+                    <Name Translatable="1">New phone ticket</Name>
+                    <Link>Action=AgentTicketPhone</Link>
+                    <LinkOption></LinkOption>
+                    <NavBar>Ticket</NavBar>
+                    <Type></Type>
+                    <Block></Block>
+                    <AccessKey>n</AccessKey>
+                    <Prio>200</Prio>
+                </NavBar>
+                <Loader>
+                    <JavaScript>Core.Agent.CustomerSearch.js</JavaScript>
+                    <JavaScript>Core.Agent.TicketAction.js</JavaScript>
+                </Loader>
+            </FrontendModuleReg>
+        </Setting>
+    </ConfigItem>
+	
+</otrs_config>
